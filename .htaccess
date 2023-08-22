@@ -1,0 +1,35 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^gymsoftware.cyberperito.com [NC]
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://gymsoftware.cyberperito.com/$1 [R,L]
+
+<Files 403.shtml>
+order allow,deny
+allow from all
+</Files>
+
+deny from 27.63.152.156
+deny from 182.73.214.22
+deny from 182.74.165.114
+deny from 106.223.145.23
+deny from 223.227.72.145
+deny from 117.97.72.141
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php74” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php74 .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
+
+ErrorDocument 403     /cgi-sys/403_def.html
+
+ErrorDocument 404     /cgi-sys/404_def.html
+
+ErrorDocument 500     /cgi-sys/500_def.html
+
+ErrorDocument 502     /cgi-sys/502_def.html
+
+ErrorDocument 503     /cgi-sys/503_def.html
+
+ErrorDocument 504     /cgi-sys/504_def.html
